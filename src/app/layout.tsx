@@ -16,7 +16,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PneusPro | Especialistas em Pneus — Montagem, Alinhamento e Equilíbrio",
+  title:
+    "Pneus 2021 | Especialistas em Pneus — Montagem, Alinhamento e Equilíbrio",
   description:
     "Oficina especializada em pneus em Portugal. Montagem, alinhamento, equilíbrio e venda de pneus de todas as marcas. Serviço rápido e profissional.",
 };
@@ -28,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-PT" className="scroll-smooth">
-      <body
-        className={`${bebasNeue.variable} ${dmSans.variable} antialiased`}
-      >
+      <body className={`${bebasNeue.variable} ${dmSans.variable} antialiased`}>
         {children}
       </body>
     </html>

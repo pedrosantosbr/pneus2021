@@ -3,7 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 
 /* ─── Tire SVG Component ─── */
-function TireSVG({ className = "", size = 200 }: { className?: string; size?: number }) {
+function TireSVG({
+  className = "",
+  size = 200,
+}: {
+  className?: string;
+  size?: number;
+}) {
   return (
     <svg
       width={size}
@@ -14,8 +20,22 @@ function TireSVG({ className = "", size = 200 }: { className?: string; size?: nu
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Outer tire */}
-      <circle cx="100" cy="100" r="95" stroke="var(--gray-600)" strokeWidth="4" fill="var(--gray-800)" />
-      <circle cx="100" cy="100" r="88" stroke="var(--gray-700)" strokeWidth="2" fill="none" />
+      <circle
+        cx="100"
+        cy="100"
+        r="95"
+        stroke="var(--gray-600)"
+        strokeWidth="4"
+        fill="var(--gray-800)"
+      />
+      <circle
+        cx="100"
+        cy="100"
+        r="88"
+        stroke="var(--gray-700)"
+        strokeWidth="2"
+        fill="none"
+      />
       {/* Tread marks */}
       {Array.from({ length: 24 }).map((_, i) => {
         const angle = (i * 15 * Math.PI) / 180;
@@ -37,7 +57,14 @@ function TireSVG({ className = "", size = 200 }: { className?: string; size?: nu
         );
       })}
       {/* Inner ring */}
-      <circle cx="100" cy="100" r="55" stroke="var(--gray-600)" strokeWidth="3" fill="var(--gray-900)" />
+      <circle
+        cx="100"
+        cy="100"
+        r="55"
+        stroke="var(--gray-600)"
+        strokeWidth="3"
+        fill="var(--gray-900)"
+      />
       {/* Rim spokes */}
       {Array.from({ length: 6 }).map((_, i) => {
         const angle = (i * 60 * Math.PI) / 180;
@@ -59,7 +86,14 @@ function TireSVG({ className = "", size = 200 }: { className?: string; size?: nu
         );
       })}
       {/* Center hub */}
-      <circle cx="100" cy="100" r="18" fill="var(--gray-800)" stroke="var(--blue-500)" strokeWidth="2" />
+      <circle
+        cx="100"
+        cy="100"
+        r="18"
+        fill="var(--gray-800)"
+        stroke="var(--blue-500)"
+        strokeWidth="2"
+      />
       <circle cx="100" cy="100" r="6" fill="var(--blue-500)" />
     </svg>
   );
@@ -90,7 +124,13 @@ function useInView(threshold = 0.15) {
 }
 
 /* ─── Counter Animation ─── */
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+function AnimatedCounter({
+  target,
+  suffix = "",
+}: {
+  target: number;
+  suffix?: string;
+}) {
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView(0.5);
 
@@ -161,7 +201,7 @@ function Navbar() {
               style={{ fontFamily: "var(--font-bebas-neue)" }}
             >
               PNEUS
-              <span style={{ color: "var(--yellow-400)" }}>PRO</span>
+              <span style={{ color: "var(--yellow-400)" }}>2021</span>
             </span>
           </div>
         </a>
@@ -395,8 +435,7 @@ function HeroSection() {
       <div
         className="absolute bottom-0 left-0 right-0 h-32"
         style={{
-          background:
-            "linear-gradient(to top, var(--gray-900), transparent)",
+          background: "linear-gradient(to top, var(--gray-900), transparent)",
         }}
       />
     </section>
@@ -426,7 +465,9 @@ function StatsBar() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className={`text-center ${inView ? "animate-fade-up" : "opacity-0"}`}
+              className={`text-center ${
+                inView ? "animate-fade-up" : "opacity-0"
+              }`}
               style={{ animationDelay: `${i * 0.15}s` }}
             >
               <div
@@ -460,7 +501,13 @@ function ServicesSection() {
   const services = [
     {
       icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="var(--blue-400)" strokeWidth="2">
+        <svg
+          viewBox="0 0 48 48"
+          className="w-10 h-10"
+          fill="none"
+          stroke="var(--blue-400)"
+          strokeWidth="2"
+        >
           <circle cx="24" cy="24" r="20" />
           <circle cx="24" cy="24" r="12" />
           <circle cx="24" cy="24" r="4" fill="var(--blue-400)" />
@@ -476,7 +523,13 @@ function ServicesSection() {
     },
     {
       icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="var(--yellow-400)" strokeWidth="2">
+        <svg
+          viewBox="0 0 48 48"
+          className="w-10 h-10"
+          fill="none"
+          stroke="var(--yellow-400)"
+          strokeWidth="2"
+        >
           <path d="M8 40L24 8L40 40" strokeWidth="2.5" strokeLinejoin="round" />
           <line x1="24" y1="8" x2="24" y2="40" strokeDasharray="4 3" />
           <line x1="14" y1="28" x2="34" y2="28" strokeDasharray="4 3" />
@@ -489,9 +542,18 @@ function ServicesSection() {
     },
     {
       icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="var(--blue-400)" strokeWidth="2">
+        <svg
+          viewBox="0 0 48 48"
+          className="w-10 h-10"
+          fill="none"
+          stroke="var(--blue-400)"
+          strokeWidth="2"
+        >
           <circle cx="24" cy="24" r="18" />
-          <path d="M24 6C24 6 30 18 24 24C18 30 24 42 24 42" strokeWidth="2.5" />
+          <path
+            d="M24 6C24 6 30 18 24 24C18 30 24 42 24 42"
+            strokeWidth="2.5"
+          />
           <circle cx="24" cy="24" r="3" fill="var(--blue-400)" />
         </svg>
       ),
@@ -501,9 +563,18 @@ function ServicesSection() {
     },
     {
       icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="var(--yellow-400)" strokeWidth="2">
+        <svg
+          viewBox="0 0 48 48"
+          className="w-10 h-10"
+          fill="none"
+          stroke="var(--yellow-400)"
+          strokeWidth="2"
+        >
           <rect x="6" y="14" width="36" height="20" rx="4" strokeWidth="2.5" />
-          <path d="M14 14V10C14 8 16 6 18 6H30C32 6 34 8 34 10V14" strokeWidth="2.5" />
+          <path
+            d="M14 14V10C14 8 16 6 18 6H30C32 6 34 8 34 10V14"
+            strokeWidth="2.5"
+          />
           <line x1="24" y1="20" x2="24" y2="28" strokeWidth="3" />
           <line x1="20" y1="24" x2="28" y2="24" strokeWidth="3" />
         </svg>
@@ -514,12 +585,43 @@ function ServicesSection() {
     },
     {
       icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="var(--blue-400)" strokeWidth="2">
-          <path d="M12 36C12 36 8 28 8 20C8 12 15 6 24 6C33 6 40 12 40 20C40 28 36 36 36 36" strokeWidth="2.5" strokeLinecap="round" />
-          <line x1="12" y1="36" x2="36" y2="36" strokeWidth="2.5" strokeLinecap="round" />
-          <line x1="16" y1="42" x2="32" y2="42" strokeWidth="2.5" strokeLinecap="round" />
+        <svg
+          viewBox="0 0 48 48"
+          className="w-10 h-10"
+          fill="none"
+          stroke="var(--blue-400)"
+          strokeWidth="2"
+        >
+          <path
+            d="M12 36C12 36 8 28 8 20C8 12 15 6 24 6C33 6 40 12 40 20C40 28 36 36 36 36"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          <line
+            x1="12"
+            y1="36"
+            x2="36"
+            y2="36"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          <line
+            x1="16"
+            y1="42"
+            x2="32"
+            y2="42"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
           <circle cx="24" cy="20" r="6" strokeWidth="2" />
-          <line x1="24" y1="14" x2="24" y2="20" strokeWidth="2.5" strokeLinecap="round" />
+          <line
+            x1="24"
+            y1="14"
+            x2="24"
+            y2="20"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
         </svg>
       ),
       title: "Diagnóstico e Inspeção",
@@ -528,8 +630,19 @@ function ServicesSection() {
     },
     {
       icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="var(--yellow-400)" strokeWidth="2">
-          <path d="M6 24H14L20 10L28 38L34 24H42" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <svg
+          viewBox="0 0 48 48"
+          className="w-10 h-10"
+          fill="none"
+          stroke="var(--yellow-400)"
+          strokeWidth="2"
+        >
+          <path
+            d="M6 24H14L20 10L28 38L34 24H42"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       ),
       title: "Reparação de Furos",
@@ -547,7 +660,11 @@ function ServicesSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className={`text-center mb-10 sm:mb-16 ${inView ? "animate-fade-up" : "opacity-0"}`}>
+        <div
+          className={`text-center mb-10 sm:mb-16 ${
+            inView ? "animate-fade-up" : "opacity-0"
+          }`}
+        >
           <span
             className="inline-block text-xs tracking-[0.3em] uppercase mb-4 px-4 py-1.5 rounded-full"
             style={{
@@ -562,8 +679,7 @@ function ServicesSection() {
             className="text-4xl sm:text-6xl lg:text-7xl tracking-tight"
             style={{ fontFamily: "var(--font-bebas-neue)" }}
           >
-            OS NOSSOS{" "}
-            <span style={{ color: "var(--blue-400)" }}>SERVIÇOS</span>
+            OS NOSSOS <span style={{ color: "var(--blue-400)" }}>SERVIÇOS</span>
           </h2>
           <p
             className="mt-4 text-base sm:text-lg max-w-2xl mx-auto"
@@ -579,7 +695,9 @@ function ServicesSection() {
           {services.map((service, i) => (
             <div
               key={i}
-              className={`service-card rounded-2xl p-6 sm:p-8 ${inView ? "animate-fade-up" : "opacity-0"}`}
+              className={`service-card rounded-2xl p-6 sm:p-8 ${
+                inView ? "animate-fade-up" : "opacity-0"
+              }`}
               style={{
                 background: "var(--gray-800)",
                 border: "1px solid var(--gray-700)",
@@ -603,7 +721,10 @@ function ServicesSection() {
               >
                 {service.title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--gray-400)" }}>
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "var(--gray-400)" }}
+              >
                 {service.description}
               </p>
             </div>
@@ -633,7 +754,11 @@ function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
           {/* Left — visual */}
-          <div className={`relative ${inView ? "animate-slide-left" : "opacity-0"}`}>
+          <div
+            className={`relative ${
+              inView ? "animate-slide-left" : "opacity-0"
+            }`}
+          >
             <div
               className="aspect-[4/3] rounded-2xl overflow-hidden relative"
               style={{
@@ -661,9 +786,7 @@ function AboutSection() {
               />
             </div>
             {/* Yellow accent stripe */}
-            <div
-              className="absolute -bottom-3 -right-3 w-24 h-24 rounded-xl stripe-accent opacity-60"
-            />
+            <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-xl stripe-accent opacity-60" />
           </div>
 
           {/* Right — text */}
@@ -684,16 +807,18 @@ function AboutSection() {
             >
               CONFIANÇA E
               <br />
-              <span style={{ color: "var(--yellow-400)" }}>PROFISSIONALISMO</span>
+              <span style={{ color: "var(--yellow-400)" }}>
+                PROFISSIONALISMO
+              </span>
             </h2>
             <p
               className="text-base leading-relaxed mb-6"
               style={{ color: "var(--gray-400)" }}
             >
-              Desde 2021, a PneusPro tem vindo a servir a comunidade com
-              dedicação e rigor. A nossa equipa de técnicos certificados
-              utiliza equipamento de última geração para garantir que cada
-              serviço é realizado com a máxima qualidade.
+              Desde 2021, a Pneus 2021 tem vindo a servir a comunidade com
+              dedicação e rigor. A nossa equipa de técnicos certificados utiliza
+              equipamento de última geração para garantir que cada serviço é
+              realizado com a máxima qualidade.
             </p>
             <p
               className="text-base leading-relaxed mb-8"
@@ -701,8 +826,8 @@ function AboutSection() {
             >
               Acreditamos que pneus em bom estado são fundamentais para a
               segurança rodoviária. Por isso, oferecemos não só serviços de
-              excelência, mas também aconselhamento personalizado para que
-              faça sempre a melhor escolha.
+              excelência, mas também aconselhamento personalizado para que faça
+              sempre a melhor escolha.
             </p>
 
             {/* Feature list */}
@@ -732,7 +857,10 @@ function AboutSection() {
                       />
                     </svg>
                   </div>
-                  <span className="text-sm" style={{ color: "var(--gray-300)" }}>
+                  <span
+                    className="text-sm"
+                    style={{ color: "var(--gray-300)" }}
+                  >
                     {item}
                   </span>
                 </div>
@@ -779,7 +907,11 @@ function TestimonialsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className={`text-center mb-10 sm:mb-16 ${inView ? "animate-fade-up" : "opacity-0"}`}>
+        <div
+          className={`text-center mb-10 sm:mb-16 ${
+            inView ? "animate-fade-up" : "opacity-0"
+          }`}
+        >
           <span
             className="inline-block text-xs tracking-[0.3em] uppercase mb-4 px-4 py-1.5 rounded-full"
             style={{
@@ -804,7 +936,9 @@ function TestimonialsSection() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className={`testimonial-card rounded-2xl p-6 sm:p-8 ${inView ? "animate-fade-up" : "opacity-0"}`}
+              className={`testimonial-card rounded-2xl p-6 sm:p-8 ${
+                inView ? "animate-fade-up" : "opacity-0"
+              }`}
               style={{
                 background: "var(--gray-800)",
                 border: "1px solid var(--gray-700)",
@@ -884,7 +1018,11 @@ function BrandsSection() {
     >
       <div className="section-divider mb-10 sm:mb-16" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className={`text-center mb-12 ${inView ? "animate-fade-up" : "opacity-0"}`}>
+        <div
+          className={`text-center mb-12 ${
+            inView ? "animate-fade-up" : "opacity-0"
+          }`}
+        >
           <p
             className="text-xs tracking-[0.3em] uppercase"
             style={{ color: "var(--gray-500)" }}
@@ -963,8 +1101,18 @@ function ContactSection() {
               {[
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="var(--blue-400)" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="var(--blue-400)"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
                     </svg>
                   ),
                   label: "Telefone",
@@ -973,8 +1121,18 @@ function ContactSection() {
                 },
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="var(--blue-400)" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="var(--blue-400)"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
                     </svg>
                   ),
                   label: "E-mail",
@@ -983,9 +1141,23 @@ function ContactSection() {
                 },
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="var(--blue-400)" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="var(--blue-400)"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
                     </svg>
                   ),
                   label: "Morada",
@@ -994,8 +1166,18 @@ function ContactSection() {
                 },
                 {
                   icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="var(--blue-400)" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="var(--blue-400)"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                   ),
                   label: "Horário",
@@ -1171,8 +1353,8 @@ function Footer() {
               className="text-sm leading-relaxed max-w-sm"
               style={{ color: "var(--gray-500)" }}
             >
-              Especialistas em pneus desde 2021. A sua segurança na estrada
-              é a nossa prioridade.
+              Especialistas em pneus desde 2021. A sua segurança na estrada é a
+              nossa prioridade.
             </p>
           </div>
 
@@ -1211,7 +1393,10 @@ function Footer() {
             >
               HORÁRIO
             </h4>
-            <div className="space-y-2 text-sm" style={{ color: "var(--gray-500)" }}>
+            <div
+              className="space-y-2 text-sm"
+              style={{ color: "var(--gray-500)" }}
+            >
               <div className="flex justify-between">
                 <span>Segunda–Sexta</span>
                 <span style={{ color: "var(--gray-300)" }}>8h–19h</span>
@@ -1236,7 +1421,9 @@ function Footer() {
             color: "var(--gray-600)",
           }}
         >
-          <span>&copy; 2021–2026 PneusPro. Todos os direitos reservados.</span>
+          <span>
+            &copy; 2021–2026 Pneus 2021. Todos os direitos reservados.
+          </span>
           <span>Feito com dedicação em Portugal</span>
         </div>
       </div>
