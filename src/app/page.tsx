@@ -179,7 +179,7 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="tel:+351912345678"
+            href="tel:+351913416896"
             className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide text-white"
           >
             Ligar Agora
@@ -230,7 +230,7 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="tel:+351912345678"
+            href="tel:+351913416896"
             className="btn-primary px-5 py-3 rounded-lg text-sm font-semibold tracking-wide text-white text-center"
           >
             Ligar Agora
@@ -968,8 +968,8 @@ function ContactSection() {
                     </svg>
                   ),
                   label: "Telefone",
-                  value: "+351 912 345 678",
-                  href: "tel:+351912345678",
+                  value: "+351 913 416 896",
+                  href: "tel:+351913416896",
                 },
                 {
                   icon: (
@@ -978,8 +978,8 @@ function ContactSection() {
                     </svg>
                   ),
                   label: "E-mail",
-                  value: "geral@pneuspro.pt",
-                  href: "mailto:geral@pneuspro.pt",
+                  value: "geral@pneus2021.pt",
+                  href: "mailto:geral@pneus2021.pt",
                 },
                 {
                   icon: (
@@ -989,7 +989,7 @@ function ContactSection() {
                     </svg>
                   ),
                   label: "Morada",
-                  value: "Rua dos Pneus, 123 — Lisboa",
+                  value: "Rua de Senhor de Pias, 1278 — 4990-354 Ponte de Lima",
                   href: "#",
                 },
                 {
